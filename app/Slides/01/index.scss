@@ -1,0 +1,15 @@
+@import '../../scss/_default';
+
+.SlideItem[data-id="01"] {
+  background: $secondary-color;
+  color: #FFF;
+
+
+  // Slide transition
+  // ------------------------------------------
+
+  &.to-forw-enter {}
+
+  &.to-forw-enter-active {}
+
+}

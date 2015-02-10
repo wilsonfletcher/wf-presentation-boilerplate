@@ -1,0 +1,68 @@
+* {
+  /* autoprefixer: off */
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+
+  -webkit-touch-callout: none;
+  -webkit-tap-highlight-color: rgba(0,0,0,0);
+
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  color: $text-color;
+  font-family: $base-font-family;
+  font-size: $base-font-size;
+  line-height: $base-line-height;
+  font-weight: 600; // demi bold
+
+  @include breakpoint(max-width 1100px) {
+    font-size: 14px;
+  }
+
+  @include breakpoint(1500px) {
+    font-size: 20px;
+  }
+
+  @include breakpoint(1850px) {
+    font-size: 24px
+  }
+}
+
+html, body {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button {
+  background: none;
+  border: none;
+  font: inherit;
+
+  &:focus { outline: none; }
+}
+
+h1, h2, h3, h4, h5, p {
+  margin: 0;  
+}
+
+.Application .t-primary {
+  color: $primary-color;
+}
+
+.Application .t-secondary {
+  color: $secondary-color;
+}
+
+.Application .t-center {
+  text-align: center;
+}
+

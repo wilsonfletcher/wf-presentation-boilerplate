@@ -1,0 +1,18 @@
+{
+  "name": "react-boilerplate",
+  "version": "0.1.0",
+  "authors": [
+    "Alberto Gasparin <albertogasparin@gmail.com>"
+  ],
+  "description": "Boilerplate for Webpack + ReactJS + SCSS with hot code reloading",
+  "license": "MIT",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {}
+}

@@ -1,0 +1,29 @@
+@import '../../scss/_default';
+
+.SlideItem[data-id="thanks"] {
+  
+  img {
+    width: 12em;
+    margin-bottom: 3em;
+  }
+
+  h2 {
+    transform: translate(0,0);
+    transition-delay: 0.5s;
+  }
+
+  // Slide transition
+  // ------------------------------------------
+
+  &.to-forw-enter {}
+
+  &.to-forw-enter-active {}
+
+  // Slide content transitions
+  // ------------------------------------------
+
+  &.to-forw-enter-active figure {
+    transform: scale(0);
+  }
+
+}

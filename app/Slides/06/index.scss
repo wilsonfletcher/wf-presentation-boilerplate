@@ -1,0 +1,13 @@
+@import '../../scss/_default';
+
+.SlideItem[data-id="06"] {
+
+
+  // Slide transition
+  // ------------------------------------------
+
+  &.to-forw-enter {}
+
+  &.to-forw-enter-active {}
+
+}

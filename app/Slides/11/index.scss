@@ -1,0 +1,17 @@
+@import '../../scss/_default';
+
+.SlideItem[data-id="11"] {
+  
+  img {
+    margin-right: -10%;
+    margin-bottom: -12%;
+  }
+
+  // Slide transition
+  // ------------------------------------------
+
+  &.to-forw-enter {}
+
+  &.to-forw-enter-active {}
+
+}
