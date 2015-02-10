@@ -2,7 +2,7 @@
 
 
 .SlideDeck-items {
-  border-bottom: em(50px) solid transparent;
+  border-bottom: 3.1rem solid transparent;
   z-index: 10;
 }
 
@@ -99,12 +99,13 @@
   }
 
   h4 {
+    margin: 0.2em 0;
     font: 400 2rem/1.2 $title-font;
     text-transform: uppercase;
   }
 
   h2 + h4 {
-    margin: 0.2em 0 0.8em;
+    margin-bottom: 0.8em;
   }
 
   p, ul, ol {
@@ -153,7 +154,7 @@
 .SlideItem {
   -webkit-backface-visibility: hidden;
   transform: translate3d(0, 0, 0);
-  transition: transform 0.8s ease 0.2s;
+  transition: transform 1.0s cubic-bezier(0.6,0,0.65,1) 0.2s;
 
   &.to-forw-enter {
     opacity: 0;
@@ -226,12 +227,12 @@
     }
 
     h1, h2, h3, h4, p, li {
-      transform: translate3d(-30rem, 0, 0);
+      transform: translate3d(-20rem, 0, 0);
 
-      &:nth-child(2) { transform: translate3d(-25rem, 0, 0); }
-      &:nth-child(3) { transform: translate3d(-20rem, 0, 0); }
-      &:nth-child(4) { transform: translate3d(-15rem, 0, 0); }
-      &:nth-child(5) { transform: translate3d(-10rem, 0, 0); }
+      &:nth-child(2) { transform: translate3d(-16rem, 0, 0); }
+      &:nth-child(3) { transform: translate3d(-12rem, 0, 0); }
+      &:nth-child(4) { transform: translate3d(-08rem, 0, 0); }
+      &:nth-child(5) { transform: translate3d(-04rem, 0, 0); }
     }
   }
 
@@ -241,8 +242,8 @@
     h1, h2, h3, h4, p, figure, li {
       opacity: 1;
       transform: translate(0,0) scale(1,1);
-      transition: all 1.5s $nice-ease 0.2s;
+      transition: all 1.5s $nice-ease 0.5s;
     }
     
-    figure { transition-delay: 1.5s; }
+    figure { transition-delay: 1.8s; }
   }

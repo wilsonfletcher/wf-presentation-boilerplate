@@ -1,26 +1,19 @@
 // vendor modules require
-var React = require("react/addons"),
-    Router = require("react-router");
+var React = require("react/addons");
 
-// app modules require
-
-// shorthands
-var { Route, DefaultRoute, RouteHandler, Link } = Router;
-var { CSSTransitionGroup } = React.addons;
-
-// style
-require("./index.scss");
-
+// If more complex styles are needed
+// create a index.scss file in the same folder
+// require("./index.scss");
 
 var Slide = React.createClass({
   render: function () {
-    var cx = React.addons.classSet;
+    var slideStyle = {};
 
     return (
-      <article className="SlideItem" data-id={this.props.id}>
+      <article className="SlideItem" data-id={this.props.id} style={slideStyle}>
         <div className="SlideItem-text g-center g-wrapper">
-          <h2>How do I now which dependencies I need?</h2>
-          <h1 className="t-secondary">And where do I find them?</h1>
+          <h2>That lib is made of multiple files and requires X, Y & Z.</h2>
+          <h2 className="t-primary">How can I get them?</h2>
         </div>
       </article>
     );

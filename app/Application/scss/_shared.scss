@@ -66,3 +66,18 @@ h1, h2, h3, h4, h5, p {
   text-align: center;
 }
 
+.Application .bg-primary {
+  background: $primary-color;
+  color: #FFF;
+}
+
+.Application .bg-secondary {
+  background: $secondary-color;
+  color: #FFF;
+}
+
+.Application .bg-dark {
+  background: #222;
+  color: #FFF;
+}
+

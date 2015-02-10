@@ -1,29 +1,26 @@
 // vendor modules require
-var React = require("react/addons"),
-    Router = require("react-router");
+var React = require("react/addons");
 
-// app modules require
-
-// shorthands
-var { Route, DefaultRoute, RouteHandler, Link } = Router;
-var { CSSTransitionGroup } = React.addons;
-
-// style
-require("./index.scss");
-
+// If more complex styles are needed
+// create a index.scss file in the same folder
+// require("./index.scss");
 
 var Slide = React.createClass({
   render: function () {
-    var cx = React.addons.classSet;
+    var slideStyle = {},
+        imageStyle = {
+          marginTop: '1.5em',
+          marginBottom: '-10%',
+        };
 
     return (
-      <article className="SlideItem" data-id={this.props.id}>
+      <article className="SlideItem" data-id={this.props.id} style={slideStyle}>
         <div className="SlideItem-text g-center g-wrapper">
           <h2>JS modules systems</h2>
           <h4>Browserify, <u>Webpack</u></h4>
-          <p>Declare what is required and ”something“ will make it available.</p>
+          <p>Declare what is required and it will be available where needed</p>
           <figure>
-            <img src={ require("./image.svg") } />
+            <img src={require("./image.svg")} style={imageStyle} />
           </figure>
         </div>
       </article>

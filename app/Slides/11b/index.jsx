@@ -7,17 +7,23 @@ var React = require("react/addons");
 
 var Slide = React.createClass({
   render: function () {
-    var slideStyle = {};
+    var slideStyle = {},
+        uStyle = {
+          color: '#333'
+        };
 
     return (
-      <article className="SlideItem bg-secondary" data-id={this.props.id} style={slideStyle}>
+      <article className="SlideItem bg-primary" data-id={this.props.id} style={slideStyle}>
         <div className="SlideItem-text g-center g-wrapper">
-          <h1>Living in <br />a front-end world</h1>
-          <h4>What is going on?</h4>
+          <h1>I want them to <u style={uStyle}>auto-reorder</u> themselves</h1>
         </div>
       </article>
     );
   }
 });
+
+
+
+
 
 module.exports = Slide;

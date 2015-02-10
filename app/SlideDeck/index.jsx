@@ -81,7 +81,7 @@ var SlideDeck = React.createClass({
         <footer className="SlideDeck-footer">
           <div className="SlideDeck-info">
             <img className="g-left SlideDeck-logo" src={require("./logo.svg")} />
-            Web dev world
+            Front-end world
             <time>February 2015</time>
           </div>
 

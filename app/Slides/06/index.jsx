@@ -1,27 +1,20 @@
 // vendor modules require
-var React = require("react/addons"),
-    Router = require("react-router");
+var React = require("react/addons");
 
-// app modules require
-
-// shorthands
-var { Route, DefaultRoute, RouteHandler, Link } = Router;
-var { CSSTransitionGroup } = React.addons;
-
-// style
-require("./index.scss");
-
+// If more complex styles are needed
+// create a index.scss file in the same folder
+// require("./index.scss");
 
 var Slide = React.createClass({
   render: function () {
-    var cx = React.addons.classSet;
+    var slideStyle = {};
 
     return (
-      <article className="SlideItem" data-id={this.props.id}>
+      <article className="SlideItem" data-id={this.props.id} style={slideStyle}>
         <div className="SlideItem-text g-center g-wrapper">
           <h2>Javascript pitfalls</h2>
           <ul>
-            <li>Not hardcore devevelopers’ friendly</li>
+            <li>Not “hardcore” developers’ friendly</li>
             <li>Hard to scale</li>
             <li>No easy way to manage dependencies</li>
           </ul>
