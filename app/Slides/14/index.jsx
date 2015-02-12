@@ -10,10 +10,9 @@ var Slide = React.createClass({
     var slideStyle = {};
 
     return (
-      <article className="SlideItem" data-id={this.props.id} style={slideStyle}>
+      <article className="SlideItem bg-primary" data-id={this.props.id} style={slideStyle}>
         <div className="SlideItem-text g-center g-wrapper">
-          <h2>Multiple files and many dependencies.</h2>
-          <h2 className="t-primary">How can I get them all?</h2>
+          <h1>And now repeat.</h1>
         </div>
       </article>
     );
