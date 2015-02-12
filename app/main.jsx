@@ -16,7 +16,7 @@ if(!Object.assign) {
 
 var routes = (
   <Route name="app" path="/" handler={require("./Application")}>
-    <Route name="slide" path="slide/:id" handler={require("./SlideDeck")}/>
+    <Route name="slide" path="slide/:id" handler={require("./Application")}/>
     <Redirect from="" to="slide" params={{ id:'01' }} />
   </Route>
 );
