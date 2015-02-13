@@ -5,7 +5,7 @@ var React = require("react/addons"),
 // app modules require
 
 // shorthands
-var { Route, DefaultRoute, Redirect, RouteHandler, Link } = Router;
+var { Route, Redirect } = Router;
 
 
 // polyfill

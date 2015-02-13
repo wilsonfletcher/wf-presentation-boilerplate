@@ -4,7 +4,7 @@ var React = require("react/addons"),
     Hotkey = require('react-hotkey');
 
 // shorthands
-var { Route, DefaultRoute, RouteHandler, Link, Navigation } = Router;
+var { Link, Navigation } = Router;
 var { CSSTransitionGroup } = React.addons;
 
 // style

@@ -1,16 +1,17 @@
 {
-  "name": "react-boilerplate",
+  "name": "react-slideshow",
   "version": "0.1.0",
   "authors": [
     "Alberto Gasparin <albertogasparin@gmail.com>"
   ],
-  "description": "Boilerplate for Webpack + ReactJS + SCSS with hot code reloading",
+  "description": "Boilerplate for slideshows w/ Webpack + ReactJS + SCSS and hot reload",
   "license": "MIT",
   "private": true,
   "ignore": [
     "**/.*",
     "node_modules",
     "bower_components",
+    "build",
     "test",
     "tests"
   ],

@@ -1,16 +1,9 @@
 var webpack = require('webpack');
 var ExtractTextPlugin = require("extract-text-webpack-plugin");
+var HtmlWebpackPlugin = require('html-webpack-plugin');
 var isProduction = process.env.NODE_ENV == "production";
 
-var cssLoader = 'css'
-              + '!autoprefixer?{browsers:["last 3 version", "IE 9"]}'
-              + '!sass?outputStyle=compressed';
-
-if(!isProduction) {
-  cssLoader = cssLoader.replace('css!', 'css?sourceMap!');
-  cssLoader = cssLoader.replace('=compressed', '=expanded&sourceMapEmbed=true');
-}
-
+var cssLoaders = ['css!autoprefixer?{browsers:["last 3 version", "IE 9"]}!sass?outputStyle=compressed'];
 
 var config = {
   addVendor: function (name, path) {
@@ -32,16 +25,17 @@ var config = {
   },
   output: {
     filename: '[name].js',
-    path: __dirname+'/assets',
-    publicPath: '/assets/'
+    path: __dirname+'/build',
+    publicPath: '/'
   },
   
   module: {
     noParse: [],
     loaders: [
-      { test: /\.jsx$/, loaders: ['react-hot', 'jsx?harmony'], exclude: /node_modules/ },
-      { test: /\.scss$/, loaders: ['style', cssLoader] },
-      { test: /\.(png|jpg|jpeg|gif|svg)/, loaders: ["url?limit=10000"] },
+      { test: /\.jsx/, loaders: ['react-hot', 'jsx?harmony'], exclude: /node_modules/ },
+      { test: /\.scss/, loaders: cssLoaders },
+      { test: /\.(png|jpg|jpeg|gif)/, loaders: ['url?limit=8000'] },
+      { test: /\.svg/, loaders: ['url?limit=8000', 'svgo'] },
       { test: /\.woff/, loaders: ['url?limit=50000'] },
       { test: /\.(ttf|eot)/, loaders: ['file'] },
       { test: /\.html/, loaders: ['html'] },
@@ -49,7 +43,6 @@ var config = {
   },
 
   plugins: [
-    // new ExtractTextPlugin("css/[name].css", { allChunks: true }),
     new webpack.optimize.CommonsChunkPlugin('vendors', 'vendors.js'),
   ],
 };
@@ -62,8 +55,21 @@ if (!isProduction) {
   // allow hot reload
   config.entry.app.unshift('webpack-dev-server/client?http://0.0.0.0:3000', 'webpack/hot/dev-server');
   config.plugins.unshift( new webpack.HotModuleReplacementPlugin() );
-  // add sourcemaps
+  // add css source maps
+  cssLoaders[0] = cssLoaders[0].replace('css!', 'css?sourceMap!').replace('=compressed', '=expanded&sourceMapEmbed=true');
+  cssLoaders.unshift('style');
+  // add js source maps
   config.devtool = 'eval-source-map';
+}
+
+if (isProduction) {
+  // move css out of js file
+  delete config.module.loaders[1].loaders;
+  config.module.loaders[1].loader = ExtractTextPlugin.extract('style', cssLoaders[0]);
+  
+  config.plugins.push( new ExtractTextPlugin("[name].css", { allChunks: true }) );
+
+  config.plugins.push(new HtmlWebpackPlugin({ template: 'index.html' }));
 }
 
 
