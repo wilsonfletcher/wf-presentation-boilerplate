@@ -72,8 +72,8 @@ var Application = React.createClass({
         <footer className="Application-footer">
           <div className="Application-info">
             <img className="g-left Application-logo" src={require("./logo.svg")} />
-            Front-end world
-            <time>February 2015</time>
+            Presentation title
+            <time>Month 2015</time>
           </div>
 
           <p className="Application-page">{slideIdx+1}</p>

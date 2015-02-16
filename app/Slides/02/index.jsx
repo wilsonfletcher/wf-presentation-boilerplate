@@ -9,13 +9,14 @@ var Slide = React.createClass({
   render: function () {
     var slideStyle = {},
         imageStyle = {
-          marginBottom: '-10%',
+          marginTop: '2em'
         };
 
     return (
       <article className="SlideItem" data-id={this.props.id} style={slideStyle}>
         <div className="SlideItem-text g-center g-wrapper">
-          <h2>Increase developer’s <u>productivity</u></h2>
+          <h2>Slide text <u>underlined</u></h2>
+          <p>With some additional text</p>
           <figure>
             <img src={require("./image.svg")} style={imageStyle} />
           </figure>

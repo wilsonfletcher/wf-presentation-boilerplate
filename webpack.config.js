@@ -21,7 +21,7 @@ var config = {
   },
   entry: {
     app: ['./app/main.jsx'],
-    vendors: ['react', 'react-router', 'reflux']
+    vendors: ['react', 'react-router']
   },
   output: {
     filename: '[name].js',

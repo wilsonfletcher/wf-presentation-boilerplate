@@ -12,8 +12,8 @@ var Slide = React.createClass({
     return (
       <article className="SlideItem bg-secondary" data-id={this.props.id} style={slideStyle}>
         <div className="SlideItem-text g-center g-wrapper">
-          <h1>Living in <br />a front-end world</h1>
-          <h4>What is going on?</h4>
+          <h1>Presentation title</h1>
+          <h4>Presentation Subtitle</h4>
         </div>
       </article>
     );
