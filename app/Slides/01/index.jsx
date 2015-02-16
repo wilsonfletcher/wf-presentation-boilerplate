@@ -7,7 +7,8 @@ var React = require("react/addons");
 
 var Slide = React.createClass({
   render: function () {
-    var slideStyle = {};
+    var slideStyle = {},
+        imageStyle = {};
 
     return (
       <article className="SlideItem bg-secondary" data-id={this.props.id} style={slideStyle}>
