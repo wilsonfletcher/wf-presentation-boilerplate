@@ -27,14 +27,17 @@ html {
   }
 
   @include breakpoint(1850px) {
-    font-size: 24px
+    font-size: 24px;
+  }
+
+  @media print {
+    font-size: 11pt;
   }
 }
 
 html, body {
   width: 100%;
   height: 100%;
-  overflow: hidden;
 }
 
 a {
@@ -54,6 +57,10 @@ h1, h2, h3, h4, h5, p {
   margin: 0;  
 }
 
+@media print {
+  @page { size: landscape; }
+}
+
 .Application .t-primary {
   color: $primary-color;
 }
@@ -67,17 +74,17 @@ h1, h2, h3, h4, h5, p {
 }
 
 .Application .bg-primary {
-  background: $primary-color;
+  background-color: $primary-color;
   color: #FFF;
 }
 
 .Application .bg-secondary {
-  background: $secondary-color;
+  background-color: $secondary-color;
   color: #FFF;
 }
 
 .Application .bg-dark {
-  background: #222;
+  background-color: #222;
   color: #FFF;
 }
 

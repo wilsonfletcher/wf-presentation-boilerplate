@@ -4,6 +4,23 @@
 @import 'scss/_icons';
 @import 'scss/_shared';
 
+
+.ApplicationList {
+  height: 100%;
+}
+
+.Application {
+  overflow: hidden;
+  page-break-inside: avoid;
+
+  @media print {
+    width: 28cm;
+    height: 19cm;
+    margin: 0 auto;
+    border-top: 1cm solid transparent;
+  }
+}
+
 .Application-items {
   border-bottom: 3.1rem solid transparent;
   z-index: 10;
@@ -84,7 +101,8 @@
   left: 0;
   width: 100%;
   height: 100%;
-  background: $slide-bg;
+  background-color: $slide-bg;
+  background-clip: content-box;
   border: 1.25rem solid #FFF;
 
   h1 {
@@ -125,6 +143,7 @@
   }
 
   ul, ol {
+    counter-reset: list;
     list-style: none;
     margin-top: 0.3em;
   }
@@ -133,20 +152,47 @@
     position: relative; 
     padding-left: 0.5em;
     margin-bottom: 0.3em;
+
+    &:before {
+      display: inline-block;
+      color: $secondary-color;
+      vertical-align: middle;
+    }
   }
 
   ul li:before {
     content: '▶';
-    display: inline-block;
     width: 1.5em;
     margin-left: -1.5em;
-    color: $secondary-color;
     font-size: 0.3em;
-    vertical-align: middle;
   }
 
-  img {
-    max-width: 100%;
+  ol li {
+    padding-left: 0.9em;
+  }
+
+  ol li:before {
+    counter-increment: list;
+    content: counter(list) ".";
+    width: 1.3em;
+    margin-left: -1.3em;
+    font-size: 0.65em;
+    font-family: $title-font;
+  }
+
+  .SlideItem-inlineFigure {
+    position: relative;
+    width: 50%;
+    height: 0;
+    margin-top: 3em;
+
+    img {
+      position: absolute;
+      top: 0;
+      left: 0;
+      display: block;
+      width: 200%;
+    }
   }
 }
 
@@ -163,6 +209,7 @@
     opacity: 0;
     transform: translate3d(100%, 0, 0);
     transition: opacity 0.1s ease 0s;
+    // do not use z-index or it will blink
   }
 
   &.to-forw-enter-active {
@@ -249,5 +296,9 @@
     }
     
     figure { transition-delay: 1.8s; }
+
+    h4 ~ ul li {
+      transition-delay: 0.7s;
+    }
   }
 

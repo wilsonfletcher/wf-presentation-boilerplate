@@ -7,18 +7,15 @@ var React = require("react/addons");
 
 var Slide = React.createClass({
   render: function () {
-    var slideStyle = {},
-        imageStyle = {
-          marginTop: '2em'
-        };
+    var slideStyle = {};
 
     return (
       <article className="SlideItem" data-id={this.props.id} style={slideStyle}>
         <div className="SlideItem-text g-center g-wrapper">
           <h2>Slide text <u>underlined</u></h2>
           <p>With some additional text</p>
-          <figure>
-            <img src={require("./image.svg")} style={imageStyle} />
+          <figure className="SlideItem-inlineFigure" style={{ paddingTop: '30%' }}>
+            <img src={require("./image.svg")} />
           </figure>
         </div>
       </article>

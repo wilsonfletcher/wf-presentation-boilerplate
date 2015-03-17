@@ -29,10 +29,13 @@ open http://localhost:3000
 
 ### Add images
 
-Simply put the image in the correct slide folder, then add an `IMG` tag in the `index.jsx` file:
+Put the image in the slide's folder, then put this block of code in the slide `jsx` template where you want the image to appear,
+set the appropriate `% padding` and you are ready to go:
 
 ``` jsx
-<img src={require("./my-image-name.jpg")} style={imageStyle} />
+<figure className="SlideItem-inlineFigure" style={{ paddingTop: '30%' }}>
+  <img src={require("./my-image-name.jpg")} />
+</figure>
 ```
 
 
@@ -67,6 +70,13 @@ npm run build
 
 This will generate a build folder will all the files needed to run the presentation.
 Just copy those files anywhere and `index.html` will work.
+
+
+### Export a PDF
+
+The simplest way to get a PDF of the entire slideshow is:
+1. press the keyboad key `P`, this will trigger the slideshow's list view
+2. print it from your browser menu. Each slide should be on a single page.
 
 
 ### Add Javascript libraries with Bower 
